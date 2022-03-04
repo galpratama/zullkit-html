@@ -1,17 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Tailwind CSS Starter</title>
-        <link rel="stylesheet" href="dist/styles.css" />
-    </head>
-    <body>
-        <h1
-            class="font-bold text-3xl text-center max-w-2xl mx-auto mt-12 bg-gradient-to-r from-indigo-600 to-pink-600 bg-clip-text text-transparent"
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zullkit</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flowbite@1.3.4/dist/flowbite.min.css"
+    />
+    <link rel="stylesheet" href="dist/styles.css" />
+  </head>
+  <body>
+    <nav
+      class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800"
+    >
+      <div
+        class="container flex flex-wrap items-center justify-between mx-auto my-2"
+      >
+        <a href="#" class="flex items-center">
+          <img
+            src="img/logo.svg"
+            class="h-8 ml-3 sm:ml-0 sm:h-8"
+            alt="Flowbite Logo"
+          />
+        </a>
+        <div class="flex items-center md:order-2">
+          <div class="mr-2 text-sm font-regular">Halo, Galih</div>
+          <button
+            type="button"
+            class="flex mr-3 text-sm bg-gray-800 rounded-full md:mr-0 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
+            id="user-menu-button"
+            aria-expanded="false"
+            data-dropdown-toggle="dropdown"
+          >
+            <span class="sr-only">Open user menu</span>
+            <img
+              class="w-8 h-8 rounded-full"
+              src="https://ui-avatars.com/api/?name=Galih+Pratama&background=160442&color=fff"
+              alt="user photo"
+            />
+          </button>
+
+          <div
+            class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600"
+            id="dropdown"
+          >
+            <div class="px-4 py-3">
+              <span class="block text-sm text-gray-900 dark:text-white"
+                >Galih</span
+              >
+              <span
+                class="block text-sm text-gray-500 truncate font-regular dark:text-gray-400"
+                >galih@zullkit.com</span
+              >
+            </div>
+            <ul class="py-1" aria-labelledby="dropdown">
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                  >Subscriptions</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                  >Settings</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 dark:text-gray-200 dark:hover:text-white"
+                  >Sign out</a
+                >
+              </li>
+            </ul>
+          </div>
+          <button
+            data-collapse-toggle="mobile-menu-2"
+            type="button"
+            class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="mobile-menu-2"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+            <svg
+              class="hidden w-6 h-6"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <div
+          class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+          id="mobile-menu-2"
         >
-            If you see a beautiful gradient on this text, Tailwind CSS is
-            successfully installed and setup
-        </h1>
-    </body>
+          <ul
+            class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-regular"
+          >
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-white bg-purple-700 rounded md:bg-transparent md:text-purple-700 md:p-0 dark:text-white"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >Categories</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >Pricing</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="block py-2 pl-3 pr-4 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-purple-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >Study Case</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="relative overflow-hidden bg-white">
+      <div class="mx-auto max-w-7xl">
+        <div
+          class="z-10 px-5 pb-8 bg-white xl:pl-20 lg:pl-16 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32"
+        >
+          <main
+            class="mx-auto mt-10 max-w-7xl sm:mt-12 md:mt-16 lg:mt-20 xl:mt-36"
+          >
+            <div class="sm:text-center lg:text-left">
+              <h1
+                class="text-3xl font-bold leading-normal tracking-tight text-gray-900 sm:text-4xl md:text-5xl"
+              >
+                <span class="block lg:mb-2">Design Better &</span>
+                <span class="block">Faster Than Before.</span>
+              </h1>
+              <p
+                class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0"
+              >
+                Accelerate your work with our millions
+                <span class="block lg:mb-1"></span> of ready-to-use design projects.
+              </p>
+              <div
+                class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start"
+              >
+                <div class="rounded-full">
+                  <a
+                    href="#"
+                    class="flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white bg-indigo-600 border border-transparent rounded-full hover:bg-indigo-700 md:py-2 md:text-lg md:px-10 hover:shadow"
+                  >
+                    Browse Now
+                  </a>
+                </div>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+      <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+        <img class="w-full lg:w-3/4 lg:mt-8" src="img/hero-image.png" alt="" />
+      </div>
+    </div>
+
+    <div class="container px-4 mx-auto my-16 md:px-12">
+      <h2 class="mb-4 text-xl font-medium md:mb-0 md:text-lg">Top Categories</h2>
+      <div class="flex flex-wrap -mx-1 lg:-mx-4">
+        <div class="w-full px-1 my-1 md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4">
+          <div class="overflow-hidden border border-gray-200 rounded-xl">
+            <a href="#">
+              <div class="m-4 overflow-hidden rounded-xl">
+                <img
+                  alt="Placeholder"
+                  class="block w-full h-auto"
+                  src="img/categories-1.jpg"
+                />
+              </div>
+            </a>
+
+            <header
+              class="px-4 mb-4 leading-tight"
+            >
+              <h1 class="text-lg">
+                <a class="font-semibold text-black no-underline hover:underline" href="#">
+                  Mobile UI Kit
+                </a>
+              </h1>
+              <span class="block text-sm font-light text-gray-500 no-underline">
+                731 items
+              </span>
+            </header>
+          </div>
+        </div>
+        <div class="w-full px-1 my-1 md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4">
+          <div class="overflow-hidden border border-gray-200 rounded-xl">
+            <a href="#">
+              <div class="m-4 overflow-hidden rounded-xl">
+                <img
+                  alt="Placeholder"
+                  class="block w-full h-auto"
+                  src="img/categories-2.jpg"
+                />
+              </div>
+            </a>
+
+            <header
+              class="px-4 mb-4 leading-tight"
+            >
+              <h1 class="text-lg">
+                <a class="font-semibold text-black no-underline hover:underline" href="#">
+                  Fonts
+                </a>
+              </h1>
+              <span class="block text-sm font-light text-gray-500 no-underline">
+                657 items
+              </span>
+            </header>
+          </div>
+        </div>
+        <div class="w-full px-1 my-1 md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4">
+          <div class="overflow-hidden border border-gray-200 rounded-xl">
+            <a href="#">
+              <div class="m-4 overflow-hidden rounded-xl">
+                <img
+                  alt="Placeholder"
+                  class="block w-full h-auto"
+                  src="img/categories-3.jpg"
+                />
+              </div>
+            </a>
+
+            <header
+              class="px-4 mb-4 leading-tight"
+            >
+              <h1 class="text-lg">
+                <a class="font-semibold text-black no-underline hover:underline" href="#">
+                  Icon Set
+                </a>
+              </h1>
+              <span class="block text-sm font-light text-gray-500 no-underline">
+                83,559 items
+              </span>
+            </header>
+          </div>
+        </div>
+        <div class="w-full px-1 my-1 md:w-1/2 lg:my-4 lg:px-4 lg:w-1/4">
+          <div class="overflow-hidden border border-gray-200 rounded-xl">
+            <a href="#">
+              <div class="m-4 overflow-hidden rounded-xl">
+                <img
+                  alt="Placeholder"
+                  class="block w-full h-auto"
+                  src="img/categories-4.jpg"
+                />
+              </div>
+            </a>
+
+            <header
+              class="px-4 mb-4 leading-tight"
+            >
+              <h1 class="text-lg">
+                <a class="font-semibold text-black no-underline hover:underline" href="#">
+                  Website UI Kit
+                </a>
+              </h1>
+              <span class="block text-sm font-light text-gray-500 no-underline">
+                4,500 items
+              </span>
+            </header>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container px-4 mx-auto my-16 md:px-12">
+      <h2 class="mb-4 text-xl font-medium md:mb-0 md:text-lg">New Items</h2>
+      <div class="flex flex-wrap -mx-1 lg:-mx-4">
+        <div class="w-full px-1 my-1 md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+          <div class="overflow-hidden border border-gray-200 rounded-xl">
+            <a href="#">
+              <div class="m-4 overflow-hidden rounded-xl">
+                <img
+                  alt="Placeholder"
+                  class="block w-full h-auto"
+                  src="img/items-1.jpg"
+                />
+              </div>
+            </a>
+
+            <header
+              class="px-4 mb-4 leading-tight"
+            >
+              <h1 class="text-lg">
+                <a class="font-semibold text-black no-underline hover:underline" href="#">
+                  Mobile UI Kit
+                </a>
+              </h1>
+              <span class="block text-sm font-light text-gray-500 no-underline">
+                Mobile UI Kit
+              </span>
+            </header>
+          </div>
+        </div>
+        <div class="w-full px-1 my-1 md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+          <div class="overflow-hidden border border-gray-200 rounded-xl">
+            <a href="#">
+              <div class="m-4 overflow-hidden rounded-xl">
+                <img
+                  alt="Placeholder"
+                  class="block w-full h-auto"
+                  src="img/items-2.jpg"
+                />
+              </div>
+            </a>
+
+            <header
+              class="px-4 mb-4 leading-tight"
+            >
+              <h1 class="text-lg">
+                <a class="font-semibold text-black no-underline hover:underline" href="#">
+                  Online Doctor Consultation
+                </a>
+              </h1>
+              <span class="block text-sm font-light text-gray-500 no-underline">
+                Website UI Kit
+              </span>
+            </header>
+          </div>
+        </div>
+        <div class="w-full px-1 my-1 md:w-1/2 lg:my-4 lg:px-4 lg:w-1/3">
+          <div class="overflow-hidden border border-gray-200 rounded-xl">
+            <a href="#">
+              <div class="m-4 overflow-hidden rounded-xl">
+                <img
+                  alt="Placeholder"
+                  class="block w-full h-auto"
+                  src="img/items-3.jpg"
+                />
+              </div>
+            </a>
+
+            <header
+              class="px-4 mb-4 leading-tight"
+            >
+              <h1 class="text-lg">
+                <a class="font-semibold text-black no-underline hover:underline" href="#">
+                  Banking Crypto
+                </a>
+              </h1>
+              <span class="block text-sm font-light text-gray-500 no-underline">
+                Mobile UI Kit
+              </span>
+            </header>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/flowbite@1.3.4/dist/flowbite.js"></script>
+  </body>
 </html>
