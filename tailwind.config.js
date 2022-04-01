@@ -3,6 +3,9 @@ module.exports = {
     content: ['./public/**/*.html'],
   },
   theme: {
+    fontFamily: {
+      sans: ['Poppins', 'sans-serif']
+    },
     extend: {
       colors: {
         navy: '#160442'
