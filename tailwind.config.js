@@ -3,7 +3,11 @@ module.exports = {
     content: ['./public/**/*.html'],
   },
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        navy: '#160442'
+      }
+    },
   },
   variants: {
     extend: {},
